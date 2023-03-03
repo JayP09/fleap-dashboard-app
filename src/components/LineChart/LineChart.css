@@ -1,0 +1,15 @@
+.grid {
+  color: #cdebf9;
+}
+
+.x-axis,
+.y-axis {
+  color: #1578ff;
+  stroke-width: 4;
+}
+
+.line {
+  stroke: #f6c3d0;
+  stroke-width: 4;
+  fill: none;
+}
