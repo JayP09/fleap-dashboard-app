@@ -6,6 +6,7 @@
 
 .main-dashboard-container h1 {
   padding: 1.875rem 0 0 3.75rem;
+  color: #01193e;
 }
 
 .dashboard-container {
@@ -13,11 +14,6 @@
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   place-items: center;
   padding: 0 1.75rem;
-}
-
-.navbar-active {
-  margin-left: 250px;
-  transition: 350ms;
 }
 
 .dashboard-card-container {
@@ -39,7 +35,7 @@
 
 .dashboard-button {
   width: 50%;
-  margin: 1.5rem;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 2rem;
   border: none;
@@ -55,6 +51,10 @@
 
 .stop {
   background-color: #e74c3c;
+}
+
+.reset {
+  background-color: #95a5a6;
 }
 
 @media only screen and (max-width: 1450px) {
@@ -77,7 +77,7 @@
     margin-left: 0;
   }
   .button-container {
-    height: 10rem;
+    height: 13rem;
     width: 20rem;
     margin: 1rem;
     padding: 1rem;

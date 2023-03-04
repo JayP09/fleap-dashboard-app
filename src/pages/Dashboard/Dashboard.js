@@ -62,6 +62,18 @@ const Dashboard = () => {
     toast.info('Monitoring System Stopped');
   }, []);
 
+  const resetSystem = useCallback(() => {
+    clearInterval(storeInterval.current);
+    clearTimeout(storeTimeout.current);
+    setAllData({ label: 0, heartRate: 60, bloodPressure: 80, oxygenSaturation: 86 });
+    setCurrentData({
+      heartRate: 0,
+      bloodPressure: 0,
+      oxygenSaturation: 0,
+    });
+    toast.info('Monitoring System Reset');
+  }, []);
+
   return (
     <main
       className={sidebar ? 'main-dashboard-container navbar-active' : 'main-dashboard-container'}
@@ -103,6 +115,9 @@ const Dashboard = () => {
             </button>
             <button className='dashboard-button stop' onClick={stopInterval}>
               Stop
+            </button>
+            <button className='dashboard-button reset' onClick={resetSystem}>
+              Reset
             </button>
           </div>
         </div>
