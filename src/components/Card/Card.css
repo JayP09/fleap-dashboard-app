@@ -25,6 +25,7 @@
   flex-direction: column;
   gap: 5px;
   margin-left: 20px;
+  color: #01193e;
 }
 
 @media only screen and (max-width: 640px) {
