@@ -7,9 +7,11 @@ import { SidebarContext } from '../../context/SidebarContext';
 import { SidebarData } from '../../utils/SidebarData';
 import patientImage from '../../assets/avatar.png';
 import Logo from '../../assets/logo.png';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Navbar = () => {
   const { sidebar, showSidebar } = useContext(SidebarContext);
+  const { width } = useWindowDimensions();
 
   return (
     <>
@@ -36,18 +38,33 @@ const Navbar = () => {
           <img src={Logo} alt='fleap logo' />
         </div>
         {/* Sidebar menu items */}
-        <ul className='nav-menu-items' onClick={showSidebar}>
-          {SidebarData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {width > 875 ? (
+          <ul className='nav-menu-items'>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <ul className='nav-menu-items' onClick={showSidebar}>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </nav>
     </>
   );
