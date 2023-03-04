@@ -34,9 +34,9 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Fleap logo */}
-        <div className='logo'>
+        <a className='logo' href='https://www.fleap.in/' target='_blank' rel='noreferrer'>
           <img src={Logo} alt='fleap logo' />
-        </div>
+        </a>
         {/* Sidebar menu items */}
         {width > 875 ? (
           <ul className='nav-menu-items'>

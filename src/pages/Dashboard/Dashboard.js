@@ -49,7 +49,7 @@ const Dashboard = () => {
 
   // function to start monitoring system
   const startInterval = useCallback(() => {
-    toast.success('Health Monitoring System');
+    toast.success('Health Monitoring System Started');
     storeInterval.current = setInterval(regenerateData, 5000);
     storeTimeout.current = setTimeout(stopInterval, 60000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
